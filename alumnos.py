@@ -25,3 +25,11 @@ def buscarAlumno(codAlumno : str,Alumno : dict):
     else:
         print(f"no se encontro el estudiante con el codigo {codAlumno}")
         os.system("pause")
+
+def buscar(codAlumno : str, alumno: dict, catNota: str)-> dict:
+    data = alumno.get(codAlumno,-1)
+    if (type(data) == dict):
+        return data
+    else:
+        print(f"No se encontro el estudiante con el codigo {codAlumno}")
+        os.system("pause")

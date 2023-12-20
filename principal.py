@@ -1,10 +1,11 @@
 import os
-import menus
+import menus as menus
 import alumnos as st
 
 alumnos={}
 isActive = True
 opMenu=0
+
 while isActive:
     os.system("cls")
     try:
@@ -20,7 +21,10 @@ while isActive:
                 alumnos.update(st.regAlumno())
                 rta = input("Desea registrar otro alumno S(si) o N (no)").upper()
         elif(opMenu==2):
-            sleccion= menus.subMenuNotas()
+            codigo = input("Ingrese el codigo del estudiante a buscar :  ")
+            menus.subMenuNotas(st.buscar(codigo,alumnos))
+            print(alumnos)
+            os.system("pause")
         elif(opMenu==3):
             codAlumno = input("ingrese el codigo del alumno")
             st.buscarAlumno(codAlumno,alumnos)
